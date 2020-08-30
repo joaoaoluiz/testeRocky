@@ -1,6 +1,9 @@
 const fs = require('fs')
 
-const charState = { original: ['a', 'c', 'o', 'b'], corrupt: ["æ", "¢", "ø", "ß"] }
+const charState = {
+    original: ['a', 'c', 'o', 'b'],
+    corrupt: ["æ", "¢", "ø", "ß"]
+}
 
 let brokenInput = getData()
 
@@ -18,6 +21,7 @@ function getData() {
     }
 }
 
+// Exporta os dados para o arquivo saida.json
 function saveData() {
     const output = JSON.stringify(brokenInput, null, 2)
 
@@ -94,7 +98,6 @@ function printInventoryValue() {
     })
     console.log(`\nTOTAL: R$ ${total.toFixed(2)}`)
 }
-
 
 if (brokenInput) {
 
